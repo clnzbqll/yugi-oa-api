@@ -1,30 +1,23 @@
 package com.dingding.mid.utils;
 
 import cn.hutool.core.codec.Base64;
-import cn.hutool.core.collection.CollUtil;
-import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.dingding.mid.dto.json.*;
 import com.dingding.mid.dto.json.Properties;
-import com.dingding.mid.entity.Users;
+import com.dingding.mid.dto.json.*;
 import com.dingding.mid.enums.AssigneeTypeEnums;
 import com.dingding.mid.enums.ModeEnums;
 import com.dingding.mid.exception.WorkFlowException;
-import com.dingding.mid.service.UserService;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import org.apache.commons.lang3.StringUtils;
-import org.flowable.bpmn.model.*;
 import org.flowable.bpmn.model.Process;
+import org.flowable.bpmn.model.*;
 import org.flowable.engine.RepositoryService;
-import org.flowable.engine.TaskService;
 import org.flowable.engine.delegate.ExecutionListener;
 import org.flowable.engine.delegate.TaskListener;
 import org.flowable.engine.repository.ProcessDefinition;
-import org.flowable.spring.integration.Flowable;
 import org.springframework.util.CollectionUtils;
 
 import java.io.UnsupportedEncodingException;
@@ -33,7 +26,6 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import static com.dingding.mid.common.WorkFlowConstants.*;
-import static org.flowable.bpmn.model.ImplementationType.IMPLEMENTATION_TYPE_CLASS;
 import static org.flowable.bpmn.model.ImplementationType.IMPLEMENTATION_TYPE_DELEGATEEXPRESSION;
 
 /**
