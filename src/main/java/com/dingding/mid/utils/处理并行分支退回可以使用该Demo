@@ -1,2 +1,0 @@
-managementService.executeCommand (new BackUserTaskCmd (runtimeService,
-                    taskId, backTaskDefKey));
