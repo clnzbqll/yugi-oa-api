@@ -53,7 +53,6 @@
     <okhttp3.version>4.9.3</okhttp3.version>
     <lombok.version>1.18.20</lombok.version>
     <pagehelper.version>5.3.0</pagehelper.version>
-
     <tencentcloud-sdk-java>3.1.278</tencentcloud-sdk-java>
     <taobao-sdk-java>1.0</taobao-sdk-java>
     <dysmsapi.version>2.0.8</dysmsapi.version>
@@ -66,19 +65,6 @@
 
   <dependencyManagement>
     <dependencies>
-
-
-      <dependency>
-        <groupId>io.minio</groupId>
-        <artifactId>minio</artifactId>
-        <version>${minio.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>commons-fileupload</groupId>
-        <artifactId>commons-fileupload</artifactId>
-        <version>${commons-fileupload.version}</version>
-      </dependency>
-
       <!-- SpringBoot 依赖配置 -->
       <dependency>
         <groupId>org.springframework.boot</groupId>
@@ -87,20 +73,6 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-
-
-      <dependency>
-        <groupId>org.springframework.plugin</groupId>
-        <artifactId>spring-plugin-core</artifactId>
-        <version>${spring-plugin-core.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.github.xiaoymin</groupId>
-        <artifactId>knife4j-openapi2-spring-boot-starter</artifactId>
-        <version>${knife4j.version}</version>
-      </dependency>
-
 
       <!-- druid -->
       <dependency>
@@ -123,10 +95,6 @@
         <version>${mysql.version}</version>
       </dependency>
 
-
-
-
-
       <!-- JSON 解析器和生成器 -->
       <dependency>
         <groupId>com.alibaba</groupId>
@@ -134,222 +102,63 @@
         <version>${fastjson.version}</version>
       </dependency>
 
-      <!-- commons-lang3 -->
-      <dependency>
-        <groupId>org.apache.commons</groupId>
-        <artifactId>commons-lang3</artifactId>
-        <version>${common-lang3.version}</version>
-      </dependency>
-
-      <!-- commons-text -->
-      <dependency>
-        <groupId>org.apache.commons</groupId>
-        <artifactId>commons-text</artifactId>
-        <version>${commons-text.version}</version>
-      </dependency>
-
-      <!-- 公共资源池 -->
-      <dependency>
-        <groupId>org.apache.commons</groupId>
-        <artifactId>commons-pool2</artifactId>
-        <version>${common-pool.version}</version>
-      </dependency>
-
-
-
-
       <dependency>
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok</artifactId>
         <version>${lombok.version}</version>
       </dependency>
 
-
-      <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-core</artifactId>
-        <version>${jackson.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.fasterxml.jackson.module</groupId>
-        <artifactId>jackson-module-jaxb-annotations</artifactId>
-        <version>${jackson.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava</artifactId>
-        <version>${guava.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>commons-io</groupId>
-        <artifactId>commons-io</artifactId>
-        <version>${commons-io.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>cn.hutool</groupId>
-        <artifactId>hutool-all</artifactId>
-        <version>${hutool-all.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>commons-fileupload</groupId>
-        <artifactId>commons-fileupload</artifactId>
-        <version>${commons-fileupload.version}</version>
-      </dependency>
-
-      <!-- okhttp -->
-      <dependency>
-        <groupId>com.squareup.okhttp3</groupId>
-        <artifactId>okhttp</artifactId>
-        <version>${okhttp3.version}</version>
-      </dependency>
-
-      <!--反之XSS注入-->
-      <dependency>
-        <groupId>org.owasp.antisamy</groupId>
-        <artifactId>antisamy</artifactId>
-        <version>${antisamy.varsion}</version>
-        <exclusions>
-          <exclusion>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-          </exclusion>
-        </exclusions>
-      </dependency>
-      <!-- PageHelper -->
       <dependency>
         <groupId>com.github.pagehelper</groupId>
         <artifactId>pagehelper</artifactId>
         <version>${pagehelper.version}</version>
       </dependency>
-
-
     </dependencies>
   </dependencyManagement>
 
 
   <dependencies>
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-websocket</artifactId>
-    </dependency>
-
-
-    <dependency>
-      <groupId>com.github.xiaoymin</groupId>
-      <artifactId>knife4j-openapi2-spring-boot-starter</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>io.minio</groupId>
-      <artifactId>minio</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>cn.hutool</groupId>
-      <artifactId>hutool-all</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-web</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-data-redis</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-configuration-processor</artifactId>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-pool2</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-core</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.module</groupId>
-      <artifactId>jackson-module-jaxb-annotations</artifactId>
-    </dependency>
-<!--    <dependency>
-      <groupId>io.springfox</groupId>
-      <artifactId>springfox-boot-starter</artifactId>
-    </dependency>-->
-    <dependency>
       <groupId>org.apache.tomcat.embed</groupId>
       <artifactId>tomcat-embed-core</artifactId>
     </dependency>
+
     <dependency>
       <groupId>com.baomidou</groupId>
       <artifactId>mybatis-plus-boot-starter</artifactId>
     </dependency>
+
     <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>druid</artifactId>
     </dependency>
+
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
     </dependency>
-    <dependency>
-      <groupId>org.hibernate.validator</groupId>
-      <artifactId>hibernate-validator</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>commons-codec</groupId>
-      <artifactId>commons-codec</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpclient</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpmime</artifactId>
-    </dependency>
+
     <!-- mysql -->
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>${mysql.version}</version>
     </dependency>
-    <dependency>
-      <groupId>commons-fileupload</groupId>
-      <artifactId>commons-fileupload</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.owasp.antisamy</groupId>
-      <artifactId>antisamy</artifactId>
-    </dependency>
+
     <dependency>
       <groupId>com.github.pagehelper</groupId>
       <artifactId>pagehelper</artifactId>
     </dependency>
+
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
     </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-annotations</artifactId>
-    </dependency>
+
     <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>fastjson</artifactId>
     </dependency>
-
 
     <!-- flowable -->
     <dependency>
@@ -401,8 +210,6 @@
       <artifactId>flowable-bpmn-layout</artifactId>
       <version>${flowable.version}</version>
     </dependency>
-
-
   </dependencies>
 
   <build>
