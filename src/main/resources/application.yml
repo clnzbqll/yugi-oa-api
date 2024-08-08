@@ -1,23 +1,36 @@
-spring:  #环境 dev|test|pro|preview
-  profiles:
-    active: dev
-  servlet:
-    multipart: #文件传输配置
-      max-file-size: 100MB #单个数据大小限制
-      max-request-size: 100MB #请求总数据大小限制
-      enabled: true  #是否启用分段上传支持
-  mvc:
-    hiddenmethod: #隐式方法过滤器
-      filter:
-        enabled: true #默认关闭。开启以支持：PUT,DELETE表单提交方法
-  jackson: #序列化和反序列化json框架
-    serialization:
-      write-dates-as-timestamps: true #是否写入日期时间时间戳格式
-    time-zone: GMT+8 #指定日期格式化时区
-  main:
-    allow-bean-definition-overriding: true #允许同名bean后者覆盖,默认：true
-    allow-circular-references: true #允许Bean相互引用,默认：false    
+# 应用服务器
 server:
-  error:
-    whitelabel:
-      enabled: false
+  port: 9999 #tomcat端口
+  servlet:
+    context-path: /api
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PWD:admin}
+    url: jdbc:mysql://${MYSQL_HOST:127.0.0.1}:${MYSQL_PORT:3306}/${MYSQL_DB:dingding_mid}?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&allowMultiQueries=true&allowPublicKeyRetrieval=true&queryTimeout=2400&nullCatalogMeansCurrent=true
+
+flowable:
+  dmn:
+    enabled: false
+  cmmn:
+    enabled: false
+  idm:
+    enabled: false
+  async-history-executor-activate: false
+  async-executor-activate: false
+  check-process-definitions: false
+  content:
+    enabled: false
+  app:
+    enabled: false
+  eventregistry:
+    enabled: false
+
+workflow:
+  db-type: mysql
+  email-host: xxx.qq.com
+  email-password: xxxx
+  email-addr: xxx.qq.com
+  email-port: 25

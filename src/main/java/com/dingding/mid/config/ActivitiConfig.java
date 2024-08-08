@@ -16,32 +16,24 @@
 
 package com.dingding.mid.config;
 
-import com.dingding.mid.job.IdWorkerIdGenerator;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import javax.annotation.Resource;
-import javax.sql.DataSource;
-
 import com.dingding.mid.job.CustomJobHandler;
-import org.flowable.bpmn.converter.BpmnXMLConverter;
-import org.flowable.common.engine.api.delegate.event.FlowableEngineEventType;
-import org.flowable.common.engine.api.delegate.event.FlowableEventListener;
-import org.flowable.common.engine.impl.history.HistoryLevel;
+import com.dingding.mid.job.IdWorkerIdGenerator;
 import org.flowable.engine.ProcessEngineConfiguration;
 import org.flowable.engine.cfg.HttpClientConfig;
 import org.flowable.engine.impl.cfg.DelegateExpressionFieldInjectionMode;
-import org.flowable.engine.impl.cfg.ProcessEngineConfigurationImpl;
 import org.flowable.job.service.JobHandler;
 import org.flowable.spring.SpringProcessEngineConfiguration;
-import org.flowable.variable.api.types.VariableType;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.transaction.PlatformTransactionManager;
+
+import javax.annotation.Resource;
+import javax.sql.DataSource;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author
